@@ -13,7 +13,7 @@ interface Product {
 }
 
 async function fetchPrices(products: Product[]) {
-  const res = await fetch('http://localhost:3000/api/fetchPrices', {
+  const res = await fetch('https://www.cocahoy.com/api/fetchPrices', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
