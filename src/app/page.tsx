@@ -12,21 +12,11 @@ interface Product {
   }[];
 }
 
-async function fetchPrices(products: Product[]) {
-  const res = await fetch('/api/fetchPrices', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(products),
-  });
-
-  if (!res.ok) {
-    throw new Error('Failed to fetch prices');
-  }
-
-  return res.json();
-}
+const fetchPrices = async () => {
+  const res = await fetch(`${process.env.BASE_URL}/api/fetchPrices`);
+  const data = await res.json();
+  return data;
+};
 
 export default async function Home() {
   const products: Product[] = [
