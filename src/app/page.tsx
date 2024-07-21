@@ -13,7 +13,7 @@ interface Product {
 }
 
 async function fetchPrices(products: Product[]) {
-  const res = await fetch('https://www.cocahoy.com/api/fetchPrices', {
+  const res = await fetch('/api/fetchPrices', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -33,18 +33,18 @@ export default async function Home() {
     {
       name: 'Coca Cola 2.25Lts',
       urls: [
-        //{ url: 'https://www.cotodigital3.com.ar/sitios/cdigi/producto/-gaseosa-coca-cola-sabor-original--225-lt/_/A-00014450-00014450-200', selector: '.price_regular_precio' },
+        { url: 'https://www.cotodigital3.com.ar/sitios/cdigi/producto/-gaseosa-coca-cola-sabor-original--225-lt/_/A-00014450-00014450-200', selector: '.price_regular_precio' },
         { url: 'https://www.masonline.com.ar/gaseosa-coca-cola-sabor-original-2-25-lt/p', selector: '.valtech-gdn-dynamic-product-0-x-dynamicProductPrice mb4' },
         { 
           url: 'https://diaonline.supermercadosdia.com.ar/gaseosa-coca-cola-sabor-original-225-lt-14837/p', 
           selector: '.vtex-product-price-1-x-currencyContainer', 
           isComplexPrice: true 
-        },
-        { 
+        }, 
+       { 
           url: 'https://www.carrefour.com.ar/gaseosa-coca-cola-sabor-original-225-l/p', 
           selector: '.valtech-carrefourar-product-price-0-x-sellingPriceValue', 
           isComplexPrice: true 
-        },
+        }, 
       ],
     },
   ];
